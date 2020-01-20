@@ -1,0 +1,15 @@
+<my-date-picker (dateChanged)="onDateChanged($event)"></my-date-picker>
+
+<div class="tender-container container">
+  <div class="row justify-content-center" *ngFor="let t of tenders">
+
+    <div class="card" style="width: 800rem; margin-bottom: 1rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ t.languageentities[0].title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ t.cpvs }}</h6>
+        <p class="card-text">{{ t.languageentities[0].description }}</p>
+        <a href="#" class="card-link">View on TED</a>
+      </div>
+    </div>
+  </div>
+</div>
