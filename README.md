@@ -48,11 +48,15 @@ You can deploy the front end of tenderclass by using a Docker container.
 `docker build -t="tenderclass-frontend" .`
 
 4. Start the docker container.<br/>
-`docker start tenderclass-frontend`
+`docker run -p 4200:4200 tenderclass-frontend`
 
 5. OPTIONAL: Tag the docker container and push it to Dockerhub for using it on a Kubernetes cluster.<br/>
 `docker tag tenderclass-frontend <DOCKERHUB_USERNAME>/tcfe`
 `docker push <DOCKERHUB_USERNAME>/tcfe`
+
+6. OPTIONAL: Build the app in production mode and deploy the docker as nginx web server<br/>
+`ng build --prod`<br/>
+Change the dockerfile
 
 ## Architecture
 - src/app/components: This folder holds the UI pages. The `recommendation` component is repsonsible for fetching the recommendations from tenderlass back end and showing them as cards.

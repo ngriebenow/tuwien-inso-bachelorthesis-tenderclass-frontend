@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { Tender } from '../dtos/tender';
-import { LanguageEntity } from '../dtos/languageentity';
-import { TenderService } from '../tender.service';
+import { Tender } from '../../dtos/tender';
+import { LanguageEntity } from '../../dtos/languageentity';
+import { TenderService } from '../../service/tender.service';
 import {IMyDpOptions} from 'mydatepicker';
 import {IMyDateModel} from 'mydatepicker';
 

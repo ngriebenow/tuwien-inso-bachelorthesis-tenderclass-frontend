@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TenderRecommendationService } from './tender-recommendation.service';
+import { TenderRecommendationService } from './service/tender-recommendation.service';
 
 describe('TenderRecommendationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
