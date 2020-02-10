@@ -1,27 +1,60 @@
-# TenderclassFrontend
+# tuwien-inso-bachelorthesis-tenderclass-frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+tenderclass is an automated screening system for public procurement notices using state-of-the-art Machine Learning and Natural Language Processing (NLP) frameworks.
+This git repository holds the Angular/Bootstrap-based front end of tenderclass. It is responsible for displaying tender recommenations in a web-based graphical user interface (GUI).
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+What things you need to install the software and how to install them
 
-## Build
+- [Node.js](https://nodejs.org/en/)
+- [Angular](https://angular.io/)</br>
+  `$ npm install -g @angular/cli`
+- [Bootstrap for Angular](https://getbootstrap.com/)</br>
+  `$ npm install -g bootstrap`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- OPTIONAL: If you want to deploy it as a Docker container: [Docker](https://www.docker.com/) runtime environment
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone this repository into your directory of choice.<br/>
+`$ git clone https://github.com/ngriebenow/tuwien-inso-bachelorthesis-tenderclass-frontend`
 
-## Running end-to-end tests
+2. Navigate to the root directory `tenderclass-frontend`.<br/>
+`$ cd tenderclass-frontend`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+3. Start the development web server.</br>
+`ng serve`
 
-## Further help
+4. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+5. Make sure that tenderclass-backend is running. Otherwise the front end will not display any tenders.
+
+## Deployment
+
+You can deploy the front end of tenderclass by using a Docker container.
+
+1. Clone this repository into your directory of choice.<br/>
+`$ git clone https://github.com/ngriebenow/tuwien-inso-bachelorthesis-tenderclass-frontend`
+
+2. Navigate to the root directory `tenderclass-frontend`.<br/>
+`$ cd tenderclass-frontend`
+
+3. Build the Docker container.<br/>
+`docker build -t="tenderclass-frontend" .`
+
+4. Start the docker container.<br/>
+`docker start tenderclass-frontend`
+
+5. OPTIONAL: Tag the docker container and push it to Dockerhub for using it on a Kubernetes cluster.<br/>
+`docker tag tenderclass-frontend <DOCKERHUB_USERNAME>/tcfe`
+`docker push <DOCKERHUB_USERNAME>/tcfe`
+
+## Architecture
+- src/app/components: This folder holds the UI pages. The `recommendation` component is repsonsible for fetching the recommendations from tenderlass back end and showing them as cards.
+- src/app/dtos: This folder holds the Data Transfer Objects (Entities), the Tender and LanguageEntity.
+- src/app/service: This folder holds the services which handle the communication with tenderclass back end.
